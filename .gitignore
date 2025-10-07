@@ -1,0 +1,6 @@
+*.pyc
+database/
+__pycache__/
+venv/
+.env
+bot.log
