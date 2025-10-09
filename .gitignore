@@ -3,4 +3,6 @@ database/
 __pycache__/
 venv/
 .env
-bot.log
+bot.logconfig.py
+
+Add-Content .\.gitignore ".env".env
