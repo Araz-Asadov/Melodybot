@@ -1,8 +1,17 @@
+# Python cache və compilations
 *.pyc
-database/
 __pycache__/
-venv/
-.env
-bot.logconfig.py
 
-Add-Content .\.gitignore ".env".env
+# Virtual environment
+venv/
+
+# Database faylları
+database/
+
+# Konfiqurasiya və gizli token
+.env
+config.py
+bot.log
+
+# Logs qovluğu
+logs/
