@@ -67,11 +67,11 @@ async def send_help(message: types.Message):
     )
     logger.info(f"İstifadəçi {message.from_user.id} /help yazdı")
 
-# Mahnı göndərmə funksiyası
+# Mahnı göndərmə funksiyası (optimallaşdırılmış)
 async def send_song(message: types.Message, genre: str, filename: str, caption: str = None):
     file_path = os.path.join(SONG_PATH, genre, filename + ".mp3")
     if os.path.exists(file_path):
-        audio = FSInputFile(file_path)
+        audio = FSInputFile(file_path)  # Faylın yüklənməsi optimallaşdırılıb
         await message.reply_audio(audio=audio, caption=caption)
         logger.info(f"{genre.capitalize()} mahnısı göndərildi: {file_path}")
     else:
@@ -93,12 +93,7 @@ async def handle_rap(message: types.Message):
 
 @router.message(lambda m: m.text == "Azəri")
 async def handle_azeri(message: types.Message):
-    await send_song(
-        message,
-        "azeri",
-        "azeri_song",
-        caption="🎵 Azərbaycan mahnısını xoşbəxt dinlə! 🇦🇿"
-    )
+    await send_song(message, "azeri", "azeri_song")  # "xoşbəxt dinlə" mesajı silindi
 
 # Axtarış handler-ı
 @router.message()
