@@ -8,6 +8,13 @@ from aiogram.filters import Command
 from aiogram.types import ReplyKeyboardMarkup, KeyboardButton, FSInputFile
 from aiogram.client.default import DefaultBotProperties
 from config import BOT_TOKEN, LOG_FILE, SEARCH_THRESHOLD, SONG_PATH
+from rapidfuzz import fuzz
+
+# Mahnı siyahısını yüklə
+song_list = {}
+for genre in ["pop", "rock", "rap", "azeri"]:
+    genre_path = os.path.join(SONG_PATH, genre)
+    song_list[genre] = [f[:-4] for f in os.listdir(genre_path) if f.endswith(".mp3")]
 
 # Logging konfiqurasiyası
 if LOG_FILE:
@@ -62,7 +69,7 @@ async def send_help(message: types.Message):
 
 # Mahnı göndərmə funksiyası
 async def send_song(message: types.Message, genre: str, filename: str, caption: str = None):
-    file_path = os.path.join(SONG_PATH, genre, filename)
+    file_path = os.path.join(SONG_PATH, genre, filename + ".mp3")
     if os.path.exists(file_path):
         audio = FSInputFile(file_path)
         await message.reply_audio(audio=audio, caption=caption)
@@ -74,24 +81,47 @@ async def send_song(message: types.Message, genre: str, filename: str, caption: 
 # Janr handler-ləri
 @router.message(lambda m: m.text == "Pop")
 async def handle_pop(message: types.Message):
-    await send_song(message, "pop", "pop_song.mp3")
+    await send_song(message, "pop", "pop_song")
 
 @router.message(lambda m: m.text == "Rock")
 async def handle_rock(message: types.Message):
-    await send_song(message, "rock", "rock_song.mp3")
+    await send_song(message, "rock", "rock_song")
 
 @router.message(lambda m: m.text == "Rap")
 async def handle_rap(message: types.Message):
-    await send_song(message, "rap", "rap_song.mp3")
+    await send_song(message, "rap", "rap_song")
 
 @router.message(lambda m: m.text == "Azəri")
 async def handle_azeri(message: types.Message):
     await send_song(
         message,
         "azeri",
-        "azeri_song.mp3",
+        "azeri_song",
         caption="🎵 Azərbaycan mahnısını xoşbəxt dinlə! 🇦🇿"
     )
+
+# Axtarış handler-ı
+@router.message()
+async def search_song(message: types.Message):
+    query = message.text.lower()
+    best_match = None
+    best_score = SEARCH_THRESHOLD
+    best_genre = None
+
+    for genre, songs in song_list.items():
+        for song in songs:
+            score = fuzz.ratio(query, song.lower())
+            if score >= best_score:
+                best_score = score
+                best_match = song
+                best_genre = genre
+
+    if best_match:
+        await send_song(message, best_genre, best_match, caption=f"🔍 '{query}' axtarışı üçün tapıldı!")
+        logger.info(f"Axtarış: '{query}' -> {best_genre}/{best_match}.mp3 (Score: {best_score}%)")
+    else:
+        await message.reply(f"❌ '{query}' üçün uyğun mahnı tapılmadı!")
+        logger.info(f"Axtarış uğursuz: '{query}'")
 
 # Əsas funksiya
 async def main():
