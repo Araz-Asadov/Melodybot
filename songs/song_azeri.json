@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Mubariz Tagiyev - Xatira",
+    "artist": "Unknown Artist",
+    "genre": "azeri",
+    "path": "azeri\\Mubariz Tagiyev - Xatira.mp3"
+  },
+  {
+    "id": 2,
+    "name": "Polad Bülbüloğlu - Gözlə Məni",
+    "artist": "Unknown Artist",
+    "genre": "azeri",
+    "path": "azeri\\Polad Bülbüloğlu - Gözlə Məni.mp3"
+  },
+  {
+    "id": 3,
+    "name": "Polad Bülbüloğlu - Mavi gözündə (SözləriLyrics)",
+    "artist": "Unknown Artist",
+    "genre": "azeri",
+    "path": "azeri\\Polad Bülbüloğlu - Mavi gözündə (SözləriLyrics).mp3"
+  }
+]

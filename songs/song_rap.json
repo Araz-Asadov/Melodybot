@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "50 Cent - Candy Shop (Official Music Video) ft. Olivia",
+    "artist": "Unknown Artist",
+    "genre": "rap",
+    "path": "rap\\50 Cent - Candy Shop (Official Music Video) ft. Olivia.mp3"
+  },
+  {
+    "id": 2,
+    "name": "50 Cent - In Da Club (Official Music Video)",
+    "artist": "Unknown Artist",
+    "genre": "rap",
+    "path": "rap\\50 Cent - In Da Club (Official Music Video).mp3"
+  },
+  {
+    "id": 3,
+    "name": "Dr. Dre - Still D.R.E. ft. Snoop Dogg",
+    "artist": "Unknown Artist",
+    "genre": "rap",
+    "path": "rap\\Dr. Dre - Still D.R.E. ft. Snoop Dogg.mp3"
+  }
+]

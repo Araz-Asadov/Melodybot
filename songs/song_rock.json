@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Massive Attack - Angel",
+    "artist": "Unknown Artist",
+    "genre": "rock",
+    "path": "rock\\Massive Attack - Angel.mp3"
+  },
+  {
+    "id": 2,
+    "name": "Nirvana - Come As You Are (Official Music Video)",
+    "artist": "Unknown Artist",
+    "genre": "rock",
+    "path": "rock\\Nirvana - Come As You Are (Official Music Video).mp3"
+  },
+  {
+    "id": 3,
+    "name": "Nirvana - Smells Like Teen Spirit (Official Music Video)",
+    "artist": "Unknown Artist",
+    "genre": "rock",
+    "path": "rock\\Nirvana - Smells Like Teen Spirit (Official Music Video).mp3"
+  }
+]

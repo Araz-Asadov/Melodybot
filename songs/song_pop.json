@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Benson Boone - Beautiful Things (Official Music Video)",
+    "artist": "Unknown Artist",
+    "genre": "pop",
+    "path": "pop\\Benson Boone - Beautiful Things (Official Music Video).mp3"
+  },
+  {
+    "id": 2,
+    "name": "Billie Eilish - BIRDS OF A FEATHER (BILLIE BY FINNEAS)",
+    "artist": "Unknown Artist",
+    "genre": "pop",
+    "path": "pop\\Billie Eilish - BIRDS OF A FEATHER (BILLIE BY FINNEAS).mp3"
+  },
+  {
+    "id": 3,
+    "name": "Kelsie Kimberlin -- Dream of Peace (Official Video) #standwithukraine",
+    "artist": "Unknown Artist",
+    "genre": "pop",
+    "path": "pop\\Kelsie Kimberlin -- Dream of Peace (Official Video) #standwithukraine.mp3"
+  },
+  {
+    "id": 4,
+    "name": "TAMINO - INDIGO NIGHT(special version).",
+    "artist": "Unknown Artist",
+    "genre": "pop",
+    "path": "pop\\TAMINO - INDIGO NIGHT(special version)..mp3"
+  }
+]
