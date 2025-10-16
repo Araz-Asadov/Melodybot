@@ -15,13 +15,27 @@
   },
   {
     "id": 3,
+    "name": "George Michael - Careless Whisper (Official Video)",
+    "artist": "Unknown Artist",
+    "genre": "pop",
+    "path": "pop\\George Michael - Careless Whisper (Official Video).mp3"
+  },
+  {
+    "id": 4,
     "name": "Kelsie Kimberlin -- Dream of Peace (Official Video) #standwithukraine",
     "artist": "Unknown Artist",
     "genre": "pop",
     "path": "pop\\Kelsie Kimberlin -- Dream of Peace (Official Video) #standwithukraine.mp3"
   },
   {
-    "id": 4,
+    "id": 5,
+    "name": "Manuş Baba - Eteği Belinde",
+    "artist": "Unknown Artist",
+    "genre": "pop",
+    "path": "pop\\Manuş Baba - Eteği Belinde.mp3"
+  },
+  {
+    "id": 6,
     "name": "TAMINO - INDIGO NIGHT(special version).",
     "artist": "Unknown Artist",
     "genre": "pop",
